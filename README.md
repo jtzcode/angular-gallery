@@ -4,7 +4,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
 ## 项目札记
-1. 
+1. 在Angular的AOT编译模式下，component的模板内部只能访问public字段，protected字段也不行。除非在`angular.json`中设置`aot`选项为`false`。
+2. 可以使用Angular Material来建立UI，省时省力，还容易保持一致的风格。
+3. 商业应用中的图片通常不会直接存储在数据库中，而是放到独立的服务器，数据库中只存储图片真实地址的链接。
 
 ## Development server
 

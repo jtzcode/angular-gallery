@@ -13,7 +13,7 @@ export class FileuploadComponent implements OnInit {
   protected imageSource: IPictureModel | null;
   protected message: any;
   protected description: string;
-  protected tag: string;
+  protected tags: string;
 
   constructor(private dialog: MatDialogRef<FileuploadComponent>,
     private preview: FilePreviewServiceService) {
@@ -33,7 +33,7 @@ export class FileuploadComponent implements OnInit {
 
   public Save(): void {
     this.imageSource.Description = this.description;
-    this.imageSource.Tag = this.tag;
+    this.imageSource.Tags = this.tags;
     this.dialog.close(this.imageSource);
   }
 
