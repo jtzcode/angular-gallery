@@ -11,11 +11,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileuploadComponent } from './components/fileupload/fileupload.component';
+import { PageBodyComponent } from './components/page-body/page-body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileuploadComponent
+    FileuploadComponent,
+    PageBodyComponent
   ],
   imports: [
     BrowserModule,

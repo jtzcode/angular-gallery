@@ -7,7 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. 在Angular的AOT编译模式下，component的模板内部只能访问public字段，protected字段也不行。除非在`angular.json`中设置`aot`选项为`false`。
 2. 可以使用Angular Material来建立UI，省时省力，还容易保持一致的风格。
 3. 商业应用中的图片通常不会直接存储在数据库中，而是放到独立的服务器，数据库中只存储图片真实地址的链接。
-
+4. 将Server类声明为抽象类，可以防止直接对其实例化。反之，通过继承Server类来实现实际工作的Server。将不同种类的Server的区别之处，声明为抽象方法（比如`AddRouting`），在各自的类中去实现。
+5. 每个类只完成自己分内的工作（比如各种Router类），各个类之间通用的功能可以利用基类和接口来定义。
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
