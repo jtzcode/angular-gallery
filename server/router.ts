@@ -17,7 +17,7 @@ export class RoutingEngine {
 
 export class AddPictureRouter implements IRouter {
     public AddRoute(route: any): void {
-        route.post('/add/', (req: Request, res: Response) => {
+        route.post('/add', (req: Request, res: Response) => {
             const picture = new Picture(req.body);
             picture.save((err, picture) => {
                 if (err) {
@@ -30,8 +30,8 @@ export class AddPictureRouter implements IRouter {
 }
 
 export class GetPictureRouter implements IRouter {
-    public AddRoute(route: any):void {
-        route.get('/get/', (req: Request, res: Response) => {
+    public AddRoute(route: any): void {
+        route.get('/get', (req: Request, res: Response) => {
             Picture.distinct("_id", (err, pic) => {
                 if (err) {
                     res.send(err);

@@ -7,7 +7,7 @@ import { RoutingEngine } from "./router";
 
 export abstract class Server {
     private router: any;
-    constructor(private port:  number = 3000,  private app: any = express(),
+    constructor(private port: number = 3000,  private app: any = express(),
         private mongo: Mongo = new Mongo(), private routeEngine: RoutingEngine = new RoutingEngine()) {
 
     }
@@ -20,6 +20,7 @@ export abstract class Server {
         this.mongo.Connect();
         this.router = express.Router();
         this.AddRouting(this.routeEngine, this.router);
+        this.app.use(this.router);
         this.OnStart();
         this.app.listen(this.port, () => console.log('Express server running on port ${this.port}'));
     }

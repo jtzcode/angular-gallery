@@ -28,7 +28,7 @@ export class TransferDataService {
       if (message === null) {
         return;
       }
-      this.client.post<IPictureModel>('http://localhost:3000/add/', message,  httpOptions).subscribe(callback => {
+      this.client.post<IPictureModel>('http://localhost:3000/add', message,  httpOptions).subscribe(callback => {
 
       });
     });
@@ -40,7 +40,7 @@ export class TransferDataService {
         'Content-Type': 'application/text'
       })
     };
-    this.client.get<string[]>('http://localhost:3000/get/', httpOptions).subscribe(pictures => {
+    this.client.get<string[]>('http://localhost:3000/get', httpOptions).subscribe(pictures => {
       pictures.forEach(pic => {
         this.client.get<IPictureModel>('http://localhost:3000/id/' + pic).subscribe(image => {
           if (image !== null) {

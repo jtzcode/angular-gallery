@@ -2,7 +2,7 @@ import { AddPictureRouter, FindByIdRouter, GetPictureRouter, RoutingEngine } fro
 import { Server } from "./server";
 
 export class GalleryServer extends Server {
-    protected AddRouting(routeEngine: RoutingEngine, router: any):void {
+    protected AddRouting(routeEngine: RoutingEngine, router: any): void {
         routeEngine.Add(AddPictureRouter, router);
         routeEngine.Add(GetPictureRouter, router);
         routeEngine.Add(FindByIdRouter, router);
