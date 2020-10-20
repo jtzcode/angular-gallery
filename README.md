@@ -9,6 +9,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 3. 商业应用中的图片通常不会直接存储在数据库中，而是放到独立的服务器，数据库中只存储图片真实地址的链接。
 4. 将Server类声明为抽象类，可以防止直接对其实例化。反之，通过继承Server类来实现实际工作的Server。将不同种类的Server的区别之处，声明为抽象方法（比如`AddRouting`），在各自的类中去实现。
 5. 每个类只完成自己分内的工作（比如各种Router类），各个类之间通用的功能可以利用基类和接口来定义。
+6. 利用`Subject`作为数据源，由其衍生的`Observable`对象作为订阅者。前者通过`next`方法生产新数据，后者通过`subscribe`方法获得数据。
+7. 对话框中的组件（FileUploadComponent）可以通过Material提供的对话框类与外部组件（AppComponent）关联起来。可以看到，AppComponent页面中并没有显式地声明FileUpload组件，而是通过Dialog的open方法动态生成。
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
